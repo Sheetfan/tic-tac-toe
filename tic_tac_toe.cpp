@@ -1,9 +1,8 @@
 #include <iostream>
-#include <vector>
+#include <array>
 #include <limits>
 
-
-std::vector <char> XAndO{' ',' ',' ',' ',' ',' ',' ',' ',' '}; // this is the game board
+std::array <char,9> XAndO{' ',' ',' ',' ',' ',' ',' ',' ',' '}; // this is the game board
 
 bool turns = false; // true = O false = X
 int choice; // the user input to place o or x
