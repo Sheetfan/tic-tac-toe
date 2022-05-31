@@ -9,13 +9,15 @@ bool turns = false; // true = O false = X
 int choice; // the user input to place o or x
 int count; // the counter to end the game
 
-void update(){ // will update board every turn in console
+// will update board every turn in console
+void update(){ 
     std::cout << XAndO[0] << "||" << XAndO[1] << "||" << XAndO[2] <<std::endl;
     std::cout << XAndO[3] << "||" << XAndO[4] << "||" << XAndO[5] <<std::endl;
     std::cout << XAndO[6] << "||" << XAndO[7] << "||" << XAndO[8] <<std::endl;
 }
 
-void showCase(){ // tells the user instructions
+// tells the user instructions
+void showCase(){ 
     std::string result;
     std::cout << "Please choice a number between 0 and 10\n";
     update();
@@ -23,8 +25,11 @@ void showCase(){ // tells the user instructions
     std::cout << result <<std::endl; 
 }
 
-void checkInput(){ //
+//checks for the input
+void checkInput(){ 
     std::cin >> choice;
+
+    //if cin fails clear the flag and clear the choice in memory
     if(std::cin.fail()){
         std::cin.clear();
         std::cout << "Please make sure you input a number.\n";
@@ -53,7 +58,8 @@ void checkInput(){ //
     
     
 }
-bool winCondtion(char shape){ // checks if anyone won
+// checks if anyone won
+bool winCondtion(char shape){ 
         return 
         //OOO 
         XAndO[0] == shape && XAndO[1] == shape && XAndO[2] == shape || 
@@ -76,7 +82,9 @@ bool winCondtion(char shape){ // checks if anyone won
        XAndO[0] == shape && XAndO[4] == shape && XAndO[8] == shape ||
        XAndO[2] == shape && XAndO[4] == shape && XAndO[6] == shape;
 }
-bool winner(){  // display massage if there is a winner
+
+// display massage if there is a winner
+bool winner(){  
     if(winCondtion('X')){
         update();
     
